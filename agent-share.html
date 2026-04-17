@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Share the TV Mount Offer | HouseAccount</title>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-698D2S65FN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-698D2S65FN');
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Cormorant+Garamond:wght@500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --navy: #133C55;
+  --navy-d: #0e2d40;
+  --blue: #6B9AB8;
+  --gold: #F5A623;
+  --gold-d: #d98d10;
+  --cream: #F2F5F7;
+  --white: #ffffff;
+  --text: #133C55;
+  --muted: #6b8699;
+  --border: #dce5ec;
+  --green: #12b76a;
+}
+html { scroll-behavior: smooth; }
+body { font-family: -apple-system, 'Segoe UI', sans-serif; background: var(--cream); color: var(--text); }
+
+/* ── NAV ── */
+.nav { background: var(--navy); padding: 18px 32px; display: flex; align-items: center; justify-content: center; }
+.nav img { height: 26px; }
+
+/* ── HERO ── */
+.hero { background: linear-gradient(150deg, var(--navy) 0%, #1b4d6b 100%); color: var(--white); text-align: center; padding: 60px 24px 72px; position: relative; overflow: hidden; }
+.hero::after { content: ''; position: absolute; bottom: -1px; left: 0; right: 0; height: 56px; background: var(--cream); clip-path: ellipse(55% 100% at 50% 100%); }
+.hero-pill { display: inline-block; background: rgba(107,154,184,0.2); border: 1px solid rgba(107,154,184,0.35); color: var(--blue); font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 6px 18px; border-radius: 100px; margin-bottom: 24px; }
+.hero h1 { font-size: clamp(28px, 5vw, 48px); font-weight: 700; line-height: 1.15; letter-spacing: -0.025em; max-width: 620px; margin: 0 auto 16px; }
+.hero h1 span { color: var(--gold); }
+.hero-sub { font-size: 16px; color: rgba(255,255,255,0.65); max-width: 480px; margin: 0 auto; line-height: 1.65; }
+
+/* ── OFFER SUMMARY ── */
+.offer-summary { background: var(--cream); padding: 64px 24px; }
+.offer-summary-inner { max-width: 820px; margin: 0 auto; }
+.eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue); margin-bottom: 10px; }
+.section-title { font-size: clamp(22px, 3.5vw, 32px); font-weight: 700; color: var(--navy); letter-spacing: -0.02em; margin-bottom: 40px; line-height: 1.2; }
+.offer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.offer-tile { background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 24px 20px; }
+.offer-tile-icon { width: 40px; height: 40px; border-radius: 10px; background: var(--cream); display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
+.offer-tile-icon svg { width: 20px; height: 20px; stroke: var(--navy); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.offer-tile h4 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 5px; }
+.offer-tile p { font-size: 13px; color: var(--muted); line-height: 1.55; }
+.offer-tile.highlight { background: var(--navy); border-color: var(--navy); }
+.offer-tile.highlight .offer-tile-icon { background: rgba(255,255,255,0.1); }
+.offer-tile.highlight .offer-tile-icon svg { stroke: var(--gold); }
+.offer-tile.highlight h4 { color: var(--white); }
+.offer-tile.highlight p { color: rgba(255,255,255,0.6); }
+
+/* ── SHARE SECTION ── */
+.share { background: var(--white); padding: 64px 24px; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.share-inner { max-width: 820px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+
+.share-left h2 { font-size: clamp(20px, 3vw, 28px); font-weight: 700; color: var(--navy); letter-spacing: -0.02em; margin-bottom: 10px; line-height: 1.25; }
+.share-left p { font-size: 14px; color: var(--muted); line-height: 1.7; margin-bottom: 28px; }
+
+.url-box { background: var(--cream); border: 1.5px solid var(--border); border-radius: 10px; padding: 14px 16px; font-size: 14px; font-weight: 600; color: var(--navy); word-break: break-all; margin-bottom: 12px; line-height: 1.5; }
+.url-box span { color: var(--muted); font-weight: 400; font-size: 12px; display: block; margin-bottom: 4px; letter-spacing: 0.05em; text-transform: uppercase; }
+
+.copy-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--navy); color: var(--white); border: none; border-radius: 10px; padding: 13px 24px; font-size: 14px; font-weight: 600; font-family: inherit; cursor: pointer; transition: background 0.15s, transform 0.1s; width: 100%; justify-content: center; }
+.copy-btn:hover { background: var(--navy-d); }
+.copy-btn svg { width: 15px; height: 15px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+.copy-confirm { display: block; text-align: center; font-size: 12px; color: var(--green); font-weight: 600; margin-top: 8px; height: 16px; opacity: 0; transition: opacity 0.2s; }
+.copy-confirm.show { opacity: 1; }
+
+.share-right { text-align: center; }
+.share-right h3 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 16px; }
+.qr-wrap { display: inline-block; background: var(--white); border: 1.5px solid var(--border); border-radius: 16px; padding: 20px; margin-bottom: 12px; }
+.qr-wrap img { display: block; border-radius: 8px; width: 200px; height: 200px; }
+.qr-note { font-size: 12px; color: var(--muted); line-height: 1.5; }
+.download-btn { display: inline-flex; align-items: center; gap: 7px; background: transparent; border: 1.5px solid var(--border); color: var(--navy); border-radius: 8px; padding: 9px 18px; font-size: 13px; font-weight: 600; font-family: inherit; cursor: pointer; margin-top: 12px; transition: border-color 0.15s, background 0.15s; }
+.download-btn:hover { border-color: var(--navy); background: var(--cream); }
+.download-btn svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ── HOW TO SHARE ── */
+.how { background: var(--cream); padding: 64px 24px; }
+.how-inner { max-width: 820px; margin: 0 auto; }
+.steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 36px; }
+.step { background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 24px 20px; }
+.step-num { width: 32px; height: 32px; background: var(--navy); color: var(--white); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; margin-bottom: 14px; }
+.step h3 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+.step p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+/* ── TRUSTED BY ── */
+.trusted { background: var(--white); padding: 48px 24px; border-top: 1px solid var(--border); }
+.trusted-inner { max-width: 820px; margin: 0 auto; text-align: center; }
+.trusted-label { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 24px; }
+.trusted-logos { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 28px 36px; }
+.brand-logo { opacity: 0.5; transition: opacity 0.2s; display: flex; align-items: center; white-space: nowrap; }
+.brand-logo:hover { opacity: 0.8; }
+.logo-compass { font-family: -apple-system,'Helvetica Neue',Arial,sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 2px; color: #1a1a1a; }
+.logo-kw { display: inline-flex; align-items: center; gap: 6px; }
+.logo-kw-box { background: #B40101; color: #fff; font-size: 11px; font-weight: 900; padding: 3px 5px; border-radius: 2px; font-family: -apple-system,sans-serif; }
+.logo-kw-text { font-size: 8.5px; font-weight: 700; letter-spacing: 1px; line-height: 1.4; color: #1a1a1a; font-family: -apple-system,sans-serif; }
+.logo-side { font-family: -apple-system,'Helvetica Neue',Arial,sans-serif; font-size: 17px; font-weight: 800; color: #0d0d0d; }
+.logo-corcoran { font-family: 'Playfair Display','Georgia',serif; font-size: 15px; font-weight: 600; color: #1a1a1a; }
+.logo-sothebys { font-family: 'Cormorant Garamond','Palatino',serif; font-size: 9px; font-weight: 500; letter-spacing: 1.5px; line-height: 1.5; color: #1a1a1a; text-align: left; }
+
+/* ── FOOTER ── */
+.footer { background: var(--navy); padding: 32px 24px; text-align: center; }
+.footer img { height: 22px; margin-bottom: 10px; opacity: 0.7; }
+.footer p { font-size: 12px; color: rgba(255,255,255,0.3); }
+
+/* ── POPUP ── */
+.popup-wrap {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 360px;
+  z-index: 1000;
+  transform: translateY(120%);
+  opacity: 0;
+  transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1), opacity 0.3s ease;
+  pointer-events: none;
+}
+.popup-wrap.show {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: all;
+}
+.popup {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 40px rgba(19,60,85,0.18), 0 2px 8px rgba(19,60,85,0.08);
+  overflow: hidden;
+}
+.popup-header {
+  background: var(--navy);
+  padding: 14px 18px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+.popup-header-text { flex: 1; }
+.popup-header .popup-eyebrow {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 4px;
+}
+.popup-header h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.3;
+}
+.popup-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.popup-header-actions button {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.5);
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+  padding: 2px 5px;
+  transition: color 0.15s;
+  border-radius: 4px;
+}
+.popup-header-actions button:hover { color: #fff; }
+.popup-minimize { font-size: 20px !important; }
+.popup-body { padding: 16px 18px 18px; transition: all 0.25s ease; }
+.popup-wrap.minimized .popup-body,
+.popup-wrap.minimized .popup-success { display: none !important; }
+.popup-body p {
+  font-size: 12.5px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+.popup-field { margin-bottom: 10px; }
+.popup-field input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  font-size: 13px;
+  font-family: inherit;
+  color: var(--text);
+  background: var(--cream);
+  outline: none;
+  transition: border-color 0.15s;
+}
+.popup-field input:focus { border-color: var(--navy); background: #fff; }
+.popup-field input::placeholder { color: #a0b3bf; }
+.popup-submit {
+  width: 100%;
+  background: var(--navy);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 11px;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  margin-top: 4px;
+  transition: background 0.15s;
+}
+.popup-submit:hover { background: var(--navy-d); }
+.popup-success {
+  text-align: center;
+  padding: 24px 18px;
+  display: none;
+}
+.popup-success .check {
+  width: 44px;
+  height: 44px;
+  background: #ecfdf5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px;
+  font-size: 20px;
+}
+.popup-success h4 { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+.popup-success p { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+/* ── PRINT ── */
+@media print {
+  .nav, .hero, .offer-summary, .how, .footer, .copy-btn, .download-btn { display: none !important; }
+  .share { border: none; padding: 0; }
+  .share-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
+  body { background: white; }
+}
+
+/* ── MOBILE ── */
+@media (max-width: 640px) {
+  .hero { padding: 48px 20px 64px; }
+  .offer-summary { padding: 48px 20px; }
+  .share { padding: 48px 20px; }
+  .share-inner { grid-template-columns: 1fr; gap: 36px; }
+  .share-right { order: -1; }
+  .how { padding: 48px 20px; }
+  .trusted { padding: 36px 20px; }
+  .trusted-logos { gap: 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="https://www.houseaccount.com/" target="_blank">
+    <img src="https://cdn.prod.website-files.com/67c69ed7dd5666816747acc4/691e951396c94a7fdce7018b_HouseAccount%20Logoo.svg" alt="HouseAccount">
+  </a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-pill">For real estate agents</div>
+  <h1>Give your clients a closing gift <span>they'll actually use.</span></h1>
+  <p class="hero-sub">Share this link with your buyers and they'll get a free TV mount with professional installation — on you, powered by HouseAccount.</p>
+</section>
+
+<!-- OFFER SUMMARY -->
+<section class="offer-summary">
+  <div class="offer-summary-inner">
+    <div class="eyebrow">What your client gets</div>
+    <div class="section-title">Buy 1 TV mount, get 1 free</div>
+    <div class="offer-grid">
+      <div class="offer-tile highlight">
+        <div class="offer-tile-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="13" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="16" x2="12" y2="21"/></svg>
+        </div>
+        <h4>Buy 1 TV mount, get 1 free</h4>
+        <p>Professional installation included on both.</p>
+      </div>
+      <div class="offer-tile">
+        <div class="offer-tile-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+        </div>
+        <h4>Dedicated concierge</h4>
+        <p>A real person reaches out within 24 hours to schedule everything.</p>
+      </div>
+      <div class="offer-tile">
+        <div class="offer-tile-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h4>Insured professionals</h4>
+        <p>Every pro is vetted, insured, and rated 4.5+ stars by real customers.</p>
+      </div>
+      <div class="offer-tile">
+        <div class="offer-tile-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h4>Scheduled around the move</h4>
+        <p>Installation is booked around your client's move-in date — zero stress.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SHARE -->
+<section class="share">
+  <div class="share-inner">
+
+    <div class="share-left">
+      <div class="eyebrow">Share with your buyers</div>
+      <h2>One link. Paste it anywhere.</h2>
+      <p>Send it by text, email, or drop it in your closing packet. Your client fills out a 2-minute form and a HouseAccount concierge handles the rest.</p>
+
+      <div class="url-box">
+        <span>Sign-up link</span>
+        <span id="display-url">https://houseaccount-freetvmount.netlify.app/</span>
+      </div>
+      <button class="copy-btn" onclick="copyLink()">
+        <svg viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+        Copy link
+      </button>
+      <span class="copy-confirm" id="copy-confirm">Copied to clipboard!</span>
+    </div>
+
+    <div class="share-right">
+      <h3>Or scan the QR code</h3>
+      <div class="qr-wrap">
+        <img id="qr-img" src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&color=133C55&data=https://houseaccount-freetvmount.netlify.app/" alt="QR Code">
+      </div>
+      <p class="qr-note">Screenshot and text it, print it for closing packets,<br>or display it at open houses.</p>
+      <button class="download-btn" onclick="downloadQR()">
+        <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download QR code
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<!-- HOW TO SHARE -->
+<section class="how">
+  <div class="how-inner">
+    <div class="eyebrow">How to share it</div>
+    <div class="section-title" style="margin-bottom:0">Three ways to get this in front of your clients</div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Text at closing</h3>
+        <p>Copy the link above and text it to your buyer the day of closing while excitement is at its peak.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Add to closing email</h3>
+        <p>Drop the link into your post-closing follow-up email as a surprise bonus gift.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Print the QR code</h3>
+        <p>Download and print the QR code to include in your closing packet or display at showings.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUSTED BY -->
+<section class="trusted">
+  <div class="trusted-inner">
+    <div class="trusted-label">Trusted by agents at</div>
+    <div class="trusted-logos">
+
+      <!-- Compass -->
+      <div class="brand-logo">
+        <span class="logo-compass">COMPASS</span>
+      </div>
+
+      <!-- Keller Williams -->
+      <div class="brand-logo">
+        <span class="logo-kw">
+          <span class="logo-kw-box">KW</span>
+          <span class="logo-kw-text">KELLER<br>WILLIAMS</span>
+        </span>
+      </div>
+
+      <!-- Side -->
+      <div class="brand-logo">
+        <span class="logo-side">side</span>
+      </div>
+
+      <!-- Corcoran -->
+      <div class="brand-logo">
+        <span class="logo-corcoran">Corcoran</span>
+      </div>
+
+      <!-- Sotheby's International Realty -->
+      <div class="brand-logo">
+        <span class="logo-sothebys">SOTHEBY'S<br>INTERNATIONAL REALTY</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <img src="https://cdn.prod.website-files.com/67c69ed7dd5666816747acc4/691e951396c94a7fdce7018b_HouseAccount%20Logoo.svg" alt="HouseAccount">
+  <p>Questions? hello@houseaccount.com &nbsp;·&nbsp; houseaccount.com</p>
+</footer>
+
+<!-- BROKER POPUP -->
+<div class="popup-wrap" id="broker-popup">
+  <div class="popup">
+    <div class="popup-header">
+      <div class="popup-header-text">
+        <div class="popup-eyebrow">RE Broker Ecosystem</div>
+        <h3>Join the HouseAccount network</h3>
+      </div>
+      <div class="popup-header-actions">
+        <button class="popup-minimize" id="popup-minimize" aria-label="Minimize">&#8722;</button>
+        <button id="popup-close" aria-label="Close">&times;</button>
+      </div>
+    </div>
+    <div class="popup-body" id="popup-form-wrap">
+      <p class="popup-desc">Share your info to join our RE broker ecosystem. No cost, no commitment — just free and discounted home services for your clients.</p>
+      <div class="popup-field">
+        <label>Name <span style="color:#c00">*</span></label>
+        <input type="text" id="pb-name" placeholder="Jane Smith" required>
+      </div>
+      <div class="popup-field">
+        <label>Email <span style="color:#c00">*</span></label>
+        <input type="email" id="pb-email" placeholder="jane@brokerage.com" required>
+      </div>
+      <div class="popup-field">
+        <label>Brokerage <span style="color:#c00">*</span></label>
+        <input type="text" id="pb-brokerage" placeholder="Compass, KW, Side…" required>
+      </div>
+      <div class="popup-field">
+        <label>Phone <span style="color:var(--muted);font-weight:400">(optional)</span></label>
+        <input type="tel" id="pb-phone" placeholder="(555) 000-0000">
+      </div>
+      <button class="popup-submit" id="popup-submit">Join the Ecosystem</button>
+    </div>
+    <div class="popup-success" id="popup-success">
+      <div class="check">✓</div>
+      <h4>You're in!</h4>
+      <p>We'll be in touch shortly with exclusive access for you and your clients.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+// ── SINGLE SOURCE OF TRUTH — paste your Netlify URL here ──
+var OFFER_URL = 'https://houseaccount-freetvmount.netlify.app/';
+
+document.getElementById('display-url').textContent = OFFER_URL;
+
+function copyLink() {
+  navigator.clipboard.writeText(OFFER_URL).then(function () {
+    var el = document.getElementById('copy-confirm');
+    el.classList.add('show');
+    setTimeout(function () { el.classList.remove('show'); }, 2000);
+  });
+}
+
+function downloadQR() {
+  var link = document.createElement('a');
+  link.download = 'houseaccount-tv-mount-qr.png';
+  link.href = 'https://api.qrserver.com/v1/create-qr-code/?size=400x400&color=133C55&data=' + encodeURIComponent(OFFER_URL);
+  link.target = '_blank';
+  link.click();
+}
+
+// ── BROKER POPUP ──
+(function () {
+  var popup = document.getElementById('broker-popup');
+  var closeBtn = document.getElementById('popup-close');
+  var minimizeBtn = document.getElementById('popup-minimize');
+  var submitBtn = document.getElementById('popup-submit');
+  var formWrap = document.getElementById('popup-form-wrap');
+  var successWrap = document.getElementById('popup-success');
+  var DISMISSED_KEY = 'ha_broker_popup_dismissed';
+  var CLOSE_COUNT_KEY = 'ha_broker_popup_closed';
+
+  if (sessionStorage.getItem(DISMISSED_KEY)) return;
+
+  function showPopup() {
+    popup.classList.remove('minimized');
+    popup.classList.add('show');
+  }
+
+  setTimeout(showPopup, 3000);
+
+  // Minimize toggles body visibility
+  minimizeBtn.addEventListener('click', function () {
+    var isMin = popup.classList.toggle('minimized');
+    minimizeBtn.textContent = isMin ? '+' : '−';
+  });
+
+  // Close: first time re-shows after 45s; second time permanently gone
+  closeBtn.addEventListener('click', function () {
+    popup.classList.remove('show');
+    var count = parseInt(sessionStorage.getItem(CLOSE_COUNT_KEY) || '0');
+    if (count < 1) {
+      sessionStorage.setItem(CLOSE_COUNT_KEY, '1');
+      setTimeout(showPopup, 45000);
+    } else {
+      sessionStorage.setItem(DISMISSED_KEY, '1');
+    }
+  });
+
+  // Submit
+  submitBtn.addEventListener('click', function () {
+    var name = document.getElementById('pb-name').value.trim();
+    var email = document.getElementById('pb-email').value.trim();
+    var brokerage = document.getElementById('pb-brokerage').value.trim();
+    var phone = document.getElementById('pb-phone').value.trim();
+
+    if (!name || !email || !brokerage) {
+      formWrap.querySelectorAll('input[required]').forEach(function (inp) {
+        inp.style.borderColor = inp.value.trim() ? '' : '#c00';
+      });
+      return;
+    }
+
+    submitBtn.textContent = 'Sending…';
+    submitBtn.disabled = true;
+
+    var params = {
+      type: 'broker_signup',
+      name: name, email: email, brokerage: brokerage,
+      phone: phone, source: 'agent-share-popup',
+      timestamp: new Date().toISOString()
+    };
+    fetch('https://script.google.com/macros/s/AKfycbxtBh44Y0akMKW5uZHmeJpWXmPcgScaXZLthD-MBy3u9yrGaRHVgZiMryGbwdx2kDgD/exec?' + new URLSearchParams(params).toString(), { method: 'GET' })
+    .catch(function () {})
+    .finally(function () {
+      formWrap.style.display = 'none';
+      successWrap.style.display = 'block';
+      sessionStorage.setItem(DISMISSED_KEY, '1');
+      setTimeout(function () { popup.classList.remove('show'); }, 3500);
+    });
+  });
+
+  formWrap.querySelectorAll('input').forEach(function (inp) {
+    inp.addEventListener('input', function () { this.style.borderColor = ''; });
+  });
+})();
+</script>
+</body>
+</html>
