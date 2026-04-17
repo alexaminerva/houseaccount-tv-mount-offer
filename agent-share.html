@@ -416,6 +416,15 @@ body { font-family: -apple-system, 'Segoe UI', sans-serif; background: var(--cre
   <p>Questions? hello@houseaccount.com &nbsp;·&nbsp; houseaccount.com</p>
 </footer>
 
+<!-- Netlify Forms detection -->
+<form name="agent-signup" data-netlify="true" hidden>
+  <input name="name">
+  <input name="email">
+  <input name="brokerage">
+  <input name="phone">
+  <input name="source">
+</form>
+
 <!-- BROKER POPUP -->
 <div class="popup-wrap" id="broker-popup">
   <div class="popup">
@@ -534,13 +543,15 @@ function downloadQR() {
     submitBtn.textContent = 'Sending…';
     submitBtn.disabled = true;
 
-    var params = {
-      type: 'broker_signup',
-      name: name, email: email, brokerage: brokerage,
-      phone: phone, source: 'agent-share-popup',
-      timestamp: new Date().toISOString()
-    };
-    fetch('https://script.google.com/macros/s/AKfycbxtBh44Y0akMKW5uZHmeJpWXmPcgScaXZLthD-MBy3u9yrGaRHVgZiMryGbwdx2kDgD/exec?' + new URLSearchParams(params).toString(), { method: 'GET' })
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({
+        'form-name': 'agent-signup',
+        name: name, email: email, brokerage: brokerage,
+        phone: phone, source: 'agent-share-popup'
+      }).toString()
+    })
     .catch(function () {})
     .finally(function () {
       formWrap.style.display = 'none';

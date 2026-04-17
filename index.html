@@ -541,7 +541,8 @@ body { font-family: -apple-system, 'Segoe UI', sans-serif; background: var(--cre
         <p class="form-title">Your information</p>
         <p class="form-sub">Fill in the details below to unlock your offer and connect with your personal HouseAccount concierge.</p>
 
-        <form id="claim-form">
+        <form id="claim-form" name="homeowner-claim" data-netlify="true">
+          <input type="hidden" name="form-name" value="homeowner-claim">
 
         <div class="form-row">
           <div class="form-group">
@@ -710,23 +711,23 @@ function handleSubmit() {
   btn.innerHTML = 'Sending&hellip;';
   btn.disabled = true;
 
-  var SUBMIT_URL = 'https://script.google.com/macros/s/AKfycbxtBh44Y0akMKW5uZHmeJpWXmPcgScaXZLthD-MBy3u9yrGaRHVgZiMryGbwdx2kDgD/exec';
+  var params = new URLSearchParams({
+    'form-name':  'homeowner-claim',
+    'first-name': document.getElementById('first-name').value,
+    'last-name':  document.getElementById('last-name').value,
+    'email':      document.getElementById('email').value,
+    'phone':      document.getElementById('phone').value,
+    'move-date':  document.getElementById('move-date').value,
+    'to-street':  document.getElementById('to-street').value,
+    'to-city':    document.getElementById('to-city').value,
+    'to-state':   document.getElementById('to-state').value,
+    'to-zip':     document.getElementById('to-zip').value
+  });
 
-  var params = {
-    'first-name':  document.getElementById('first-name').value,
-    'last-name':   document.getElementById('last-name').value,
-    'email':       document.getElementById('email').value,
-    'phone':       document.getElementById('phone').value,
-    'move-date':   document.getElementById('move-date').value,
-    'to-street':   document.getElementById('to-street').value,
-    'to-city':     document.getElementById('to-city').value,
-    'to-state':    document.getElementById('to-state').value,
-    'to-zip':      document.getElementById('to-zip').value
-  };
-
-  fetch(SUBMIT_URL + '?' + new URLSearchParams(params).toString(), {
-    method: 'GET',
-    mode: 'no-cors'
+  fetch('/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: params.toString()
   })
   .then(function() { showSuccess(); })
   .catch(function() { showSuccess(); });
@@ -749,7 +750,6 @@ function showSuccess() {
   var successWrap = document.getElementById('cpopup-success');
   var DISMISSED_KEY = 'ha_claim_popup_dismissed';
   var CLOSE_COUNT_KEY = 'ha_claim_popup_closed';
-  var SUBMIT_URL = 'https://script.google.com/macros/s/AKfycbxtBh44Y0akMKW5uZHmeJpWXmPcgScaXZLthD-MBy3u9yrGaRHVgZiMryGbwdx2kDgD/exec';
 
   if (sessionStorage.getItem(DISMISSED_KEY)) return;
 
@@ -798,15 +798,16 @@ function showSuccess() {
     submitBtn.textContent = 'Sending…';
     submitBtn.disabled = true;
 
-    var params = {};
+    var params = { 'form-name': 'homeowner-claim', 'source': 'homeowner-popup' };
     required.forEach(function (f) {
       params[f.key] = document.getElementById(f.id).value.trim();
     });
     params['move-date'] = document.getElementById('cp-movedate').value;
-    params['source'] = 'homeowner-popup';
 
-    fetch(SUBMIT_URL + '?' + new URLSearchParams(params).toString(), {
-      method: 'GET', mode: 'no-cors'
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(params).toString()
     })
     .catch(function () {})
     .finally(function () {
