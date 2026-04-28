@@ -257,14 +257,6 @@ body { font-family: -apple-system, 'Segoe UI', sans-serif; background: var(--cre
   .trusted-logos { gap: 24px; }
 }
 </style>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-KELC0QSGEG"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-KELC0QSGEG');
-</script>
 </head>
 <body>
 
@@ -425,7 +417,7 @@ body { font-family: -apple-system, 'Segoe UI', sans-serif; background: var(--cre
 </footer>
 
 <!-- Netlify Forms detection -->
-<form name="agent-signup" data-netlify="true" hidden>
+<form name="agent-signup-tx" data-netlify="true" hidden>
   <input name="name">
   <input name="email">
   <input name="brokerage">
@@ -476,7 +468,7 @@ body { font-family: -apple-system, 'Segoe UI', sans-serif; background: var(--cre
 
 <script>
 // ── SINGLE SOURCE OF TRUTH — paste your Netlify URL here ──
-var OFFER_URL = 'https://tx-houseaccount-freetvmount.netlify.app/';
+var OFFER_URL = 'https://tvoffer.houseaccount.com/';
 
 document.getElementById('display-url').textContent = OFFER_URL;
 
@@ -555,7 +547,7 @@ function downloadQR() {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: new URLSearchParams({
-        'form-name': 'agent-signup',
+        'form-name': 'agent-signup-tx',
         name: name, email: email, brokerage: brokerage,
         phone: phone, source: 'agent-share-popup'
       }).toString()
