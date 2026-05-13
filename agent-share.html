@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TX Agent Page — TV Mount Offer | HouseAccount</title>
+<title>TX Agent Page - TV Mount Offer | HouseAccount</title>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-698D2S65FN"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -125,12 +125,16 @@ body { font-family: -apple-system, 'Segoe UI', sans-serif; background: var(--cre
 @media (max-width: 640px) {
   .hero { padding: 48px 20px 64px; }
   .offer-summary { padding: 48px 20px; }
+  .offer-grid { grid-template-columns: 1fr 1fr; }
   .share { padding: 48px 20px; }
   .share-inner { grid-template-columns: 1fr; gap: 36px; }
-  .share-right { order: -1; }
   .how { padding: 48px 20px; }
   .trusted { padding: 36px 20px; }
   .trusted-logos { gap: 24px; }
+}
+@media (max-width: 400px) {
+  .offer-grid { grid-template-columns: 1fr; }
+  .share { padding: 36px 16px; }
 }
 </style>
 </head>
@@ -147,7 +151,7 @@ body { font-family: -apple-system, 'Segoe UI', sans-serif; background: var(--cre
 <section class="hero">
   <div class="hero-pill">For real estate agents</div>
   <h1>Give your clients a closing gift <span>they'll actually use.</span></h1>
-  <p class="hero-sub">Share this link with your buyers and they'll get a free TV mount with professional installation — on you, powered by HouseAccount.</p>
+  <p class="hero-sub">Share this link with your buyers and they'll get a free TV mount with professional installation - on you, powered by HouseAccount.</p>
 </section>
 
 <!-- OFFER SUMMARY -->
@@ -182,7 +186,7 @@ body { font-family: -apple-system, 'Segoe UI', sans-serif; background: var(--cre
           <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
         </div>
         <h4>Scheduled around the move</h4>
-        <p>Installation is booked around your client's move-in date — zero stress.</p>
+        <p>Installation is booked around your client's move-in date - zero stress.</p>
       </div>
     </div>
   </div>
@@ -192,6 +196,25 @@ body { font-family: -apple-system, 'Segoe UI', sans-serif; background: var(--cre
 <!-- AGENT SIGN-UP -->
 <section class="share" style="background:var(--cream);padding:64px 24px;">
   <div style="max-width:520px;margin:0 auto;">
+
+    <!-- SHARE WITH BUYERS -->
+    <div style="background:#fff;border:1.5px solid #dde6ec;border-radius:16px;padding:28px 32px;margin-bottom:24px;">
+      <p style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#6b8699;margin-bottom:14px;">Share this with your buyers</p>
+
+      <div style="background:var(--cream);border:1.5px solid #dde6ec;border-radius:10px;padding:14px 16px;margin-bottom:12px;">
+        <p style="font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#6b8699;margin-bottom:5px;">Text code</p>
+        <p style="font-size:16px;font-weight:700;color:var(--navy);">Text <strong>TX-BOGO</strong> to 267-262-5848</p>
+        <p style="font-size:12px;color:#6b8699;margin-top:3px;">Concierge responds within 1 hour</p>
+      </div>
+
+      <div style="background:var(--cream);border:1.5px solid #dde6ec;border-radius:10px;padding:14px 16px;margin-bottom:12px;">
+        <p style="font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#6b8699;margin-bottom:5px;">Sign-up link</p>
+        <p style="font-size:13px;font-weight:600;color:var(--navy);word-break:break-all;">https://tx-houseaccount-freetvmount.netlify.app</p>
+      </div>
+
+      <button onclick="navigator.clipboard.writeText('TX-BOGO: Text TX-BOGO to 267-262-5848 or visit https://tx-houseaccount-freetvmount.netlify.app');this.textContent='Copied!';setTimeout(()=>this.textContent='Copy sharing info',2000)" style="width:100%;padding:11px;background:var(--navy);color:#fff;font-size:14px;font-weight:600;border:none;border-radius:8px;cursor:pointer;font-family:inherit;">Copy sharing info</button>
+    </div>
+
     <div class="eyebrow" style="text-align:center;margin-bottom:10px;">Get set up</div>
     <h2 style="text-align:center;font-size:clamp(22px,3vw,30px);margin-bottom:8px;color:var(--navy);">Start offering this to your buyers</h2>
     <p style="text-align:center;color:var(--muted);font-size:15px;line-height:1.65;margin-bottom:32px;">Fill in your info and a HouseAccount partner will reach out to get you set up. Takes 2 minutes.</p>
@@ -202,7 +225,7 @@ body { font-family: -apple-system, 'Segoe UI', sans-serif; background: var(--cre
           <input type="hidden" name="form-name" value="agent-signup-tx">
           <input type="hidden" name="market" value="TX">
 
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px;">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));">
             <div>
               <label style="display:block;font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--navy);margin-bottom:5px;">First name</label>
               <input type="text" name="first-name" placeholder="Jane" required style="width:100%;padding:11px 13px;border:1.5px solid #dde6ec;border-radius:8px;font-size:14px;color:var(--navy);outline:none;font-family:inherit;">
@@ -297,7 +320,7 @@ body { font-family: -apple-system, 'Segoe UI', sans-serif; background: var(--cre
 </form>
 
 <script>
-// ── SINGLE SOURCE OF TRUTH — paste your Netlify URL here ──
+// ── SINGLE SOURCE OF TRUTH - paste your Netlify URL here ──
 var OFFER_URL = 'https://tvoffer.houseaccount.com/';
 
 document.getElementById('display-url').textContent = OFFER_URL;
