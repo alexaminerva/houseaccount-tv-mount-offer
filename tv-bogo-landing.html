@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HouseAccount — TV BOGO Offer for New Homeowners</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:    #133C55;
+      --navy-d:  #0e2d40;
+      --blue:    #6B9AB8;
+      --blue-d:  #4f7d9c;
+      --gold:    #F5A623;
+      --gold-d:  #d98d10;
+      --white:   #FFFFFF;
+      --gray:    #F2F5F7;
+      --text:    #1a2e3b;
+      --muted:   #6b8699;
+    }
+
+    body {
+      font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(150deg, var(--navy) 0%, #1b4d6b 100%);
+      color: var(--white);
+      text-align: center;
+      padding: 32px 24px 72px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 340px; height: 340px;
+      border-radius: 50%;
+      background: rgba(107, 154, 184, 0.12);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -2px; left: 0; right: 0;
+      height: 60px;
+      background: var(--white);
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+    .logo svg { height: 28px; width: auto; }
+
+    .badge {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 6px 18px;
+      border-radius: 100px;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 6vw, 3.6rem);
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 16px;
+      letter-spacing: -1px;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--blue);
+    }
+
+    .hero p {
+      font-size: 1.12rem;
+      color: rgba(255,255,255,0.75);
+      max-width: 520px;
+      margin: 0 auto 36px;
+    }
+
+    /* ── BOGO CARD ── */
+    .bogo-card {
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      max-width: 520px;
+      margin: 0 auto 40px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+    }
+    .bogo-side {
+      flex: 1;
+      padding: 28px 24px;
+      text-align: center;
+    }
+    .bogo-buy {
+      background: var(--navy);
+      color: var(--white);
+    }
+    .bogo-get {
+      background: var(--gold);
+      color: var(--navy);
+    }
+    .bogo-side .label {
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      opacity: 0.8;
+      margin-bottom: 6px;
+    }
+    .bogo-side .tv-icon {
+      font-size: 2.8rem;
+      display: block;
+      margin-bottom: 8px;
+    }
+    .bogo-side .desc {
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+    .bogo-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--white);
+      width: 52px;
+      flex-shrink: 0;
+      font-weight: 900;
+      font-size: 1rem;
+      color: var(--navy);
+      letter-spacing: 0;
+    }
+
+    .hero-cta {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      font-size: 1.1rem;
+      font-weight: 800;
+      padding: 18px 44px;
+      border-radius: 100px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      box-shadow: 0 8px 28px rgba(245,166,35,0.4);
+      letter-spacing: -0.2px;
+    }
+    .hero-cta:hover { background: var(--gold-d); transform: translateY(-2px); }
+
+    .hero-note {
+      margin-top: 16px;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.5);
+    }
+
+    /* ── HOW IT WORKS ── */
+    .how {
+      background: var(--white);
+      padding: 72px 24px;
+      text-align: center;
+    }
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
+    }
+    .section-sub {
+      color: var(--muted);
+      max-width: 480px;
+      margin: 0 auto 48px;
+    }
+
+    .steps {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 28px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .step {
+      background: var(--gray);
+      border-radius: 20px;
+      padding: 32px 28px;
+      flex: 1;
+      min-width: 220px;
+      max-width: 260px;
+      position: relative;
+    }
+    .step-num {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--blue);
+      color: var(--white);
+      font-size: 1.1rem;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+    }
+    .step-icon { font-size: 1.8rem; margin-bottom: 10px; }
+    .step h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .step p { font-size: 0.88rem; color: var(--muted); }
+
+    /* ── OFFER DETAILS ── */
+    .offer {
+      background: var(--gray);
+      padding: 72px 24px;
+    }
+    .offer-inner {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .offer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 20px;
+      margin: 40px 0;
+    }
+    .offer-item {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 28px 20px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    }
+    .offer-item .oi-icon { font-size: 2rem; margin-bottom: 10px; }
+    .offer-item h4 { font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+    .offer-item p { font-size: 0.82rem; color: var(--muted); }
+
+    /* ── AGENT SECTION ── */
+    .agent {
+      background: linear-gradient(150deg, var(--navy-d) 0%, var(--navy) 100%);
+      color: var(--white);
+      padding: 72px 24px;
+      text-align: center;
+    }
+    .agent .section-title { color: var(--white); }
+    .agent .section-sub { color: rgba(255,255,255,0.65); }
+
+    .agent-perks {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+      margin: 36px 0;
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .perk {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 12px;
+      padding: 14px 22px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .perk .perk-icon { font-size: 1.2rem; }
+
+    /* ── FORM ── */
+    .form-section {
+      background: var(--white);
+      padding: 72px 24px;
+    }
+    .form-card {
+      background: var(--white);
+      border: 2px solid var(--gray);
+      border-radius: 24px;
+      padding: 48px 40px;
+      max-width: 520px;
+      margin: 0 auto;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+    }
+    .form-card h2 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .form-card p {
+      color: var(--muted);
+      margin-bottom: 32px;
+      font-size: 0.9rem;
+    }
+    .form-row {
+      display: flex;
+      gap: 14px;
+    }
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 18px;
+      flex: 1;
+    }
+    .field label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .field input, .field select {
+      border: 2px solid #E2E8F0;
+      border-radius: 10px;
+      padding: 12px 16px;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s;
+      width: 100%;
+      color: var(--text);
+      background: var(--white);
+    }
+    .field input:focus, .field select:focus { border-color: var(--navy); }
+
+    .submit-btn {
+      width: 100%;
+      background: var(--navy);
+      color: var(--white);
+      border: none;
+      border-radius: 12px;
+      padding: 16px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      margin-top: 6px;
+      letter-spacing: -0.2px;
+    }
+    .submit-btn:hover { background: var(--navy-d); transform: translateY(-1px); }
+
+    .form-legal {
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 16px;
+      line-height: 1.5;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.45);
+      text-align: center;
+      padding: 28px 24px;
+      font-size: 0.78rem;
+      line-height: 1.8;
+    }
+    footer strong { color: rgba(255,255,255,0.7); }
+
+    /* ── SUCCESS STATE ── */
+    .success-state {
+      display: none;
+      text-align: center;
+      padding: 20px 0;
+    }
+    .success-state .check { font-size: 3rem; margin-bottom: 16px; }
+    .success-state h3 { font-size: 1.4rem; font-weight: 800; color: var(--navy); margin-bottom: 8px; }
+    .success-state p { color: var(--muted); }
+
+    @media (max-width: 540px) {
+      .form-card { padding: 32px 24px; }
+      .form-row { flex-direction: column; gap: 0; }
+      .bogo-divider { width: 36px; font-size: 0.85rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="logo">
+      <!-- HouseAccount wordmark SVG (white version) -->
+      <svg width="220" height="33" viewBox="0 0 162 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5.69469 23V10.8633L16.5 5.05723L10.7688 1L0 6.80604V18.9777L5.69469 23Z" fill="#ffffff"/>
+        <path d="M15.9674 18.1198L9.5695 21.5682V13.1232L15.9674 9.92114V18.1198Z" fill="rgba(255,255,255,0.55)"/>
+        <path d="M37.76 19H35.34V12.94H28.68V19H26.28V4.82H28.68V10.68H35.34V4.82H37.76V19ZM45.2038 17.22C46.6438 17.22 47.9238 16.16 47.9238 14.12C47.9238 12.1 46.6438 11.06 45.2038 11.06C43.7838 11.06 42.4838 12.1 42.4838 14.12C42.4838 16.14 43.7838 17.22 45.2038 17.22ZM45.2038 8.96C48.1238 8.96 50.2638 11.14 50.2638 14.12C50.2638 17.12 48.1238 19.3 45.2038 19.3C42.3038 19.3 40.1638 17.12 40.1638 14.12C40.1638 11.14 42.3038 8.96 45.2038 8.96ZM58.862 17.92C58.382 18.8 57.242 19.28 56.102 19.28C53.782 19.28 52.422 17.56 52.422 15.4V9.26H54.742V14.98C54.742 16.18 55.302 17.2 56.702 17.2C58.042 17.2 58.742 16.3 58.742 15.02V9.26H61.062V17.22C61.062 18.02 61.122 18.64 61.162 19H58.942C58.902 18.78 58.862 18.32 58.862 17.92ZM63.2678 16.36L65.2878 15.8C65.3678 16.68 66.0278 17.46 67.2678 17.46C68.2278 17.46 68.7278 16.94 68.7278 16.34C68.7278 15.82 68.3678 15.42 67.5878 15.26L66.1478 14.94C64.4278 14.56 63.5278 13.44 63.5278 12.1C63.5278 10.4 65.0878 8.96 67.1078 8.96C69.8278 8.96 70.7078 10.72 70.8678 11.68L68.9078 12.24C68.8278 11.68 68.4078 10.78 67.1078 10.78C66.2878 10.78 65.7078 11.3 65.7078 11.9C65.7078 12.42 66.0878 12.8 66.6878 12.92L68.1678 13.22C70.0078 13.62 70.9678 14.74 70.9678 16.18C70.9678 17.66 69.7678 19.3 67.2878 19.3C64.4678 19.3 63.3878 17.46 63.2678 16.36ZM75.0047 13.06H79.7847C79.7447 11.92 78.9847 10.9 77.3847 10.9C75.9247 10.9 75.0847 12.02 75.0047 13.06ZM80.0447 15.6L82.0047 16.22C81.4847 17.92 79.9447 19.3 77.6047 19.3C74.9647 19.3 72.6247 17.38 72.6247 14.08C72.6247 11 74.9047 8.96 77.3647 8.96C80.3647 8.96 82.1247 10.94 82.1247 14.02C82.1247 14.4 82.0847 14.72 82.0647 14.76H74.9447C75.0047 16.24 76.1647 17.3 77.6047 17.3C79.0047 17.3 79.7247 16.56 80.0447 15.6ZM94.2217 19L92.8817 15.44H86.8817L85.5617 19H83.0217L88.5417 4.82H91.3217L96.8417 19H94.2217ZM89.8817 7.42L87.7217 13.22H92.0417L89.8817 7.42ZM102.683 11.1C101.263 11.1 100.003 12.16 100.003 14.12C100.003 16.08 101.263 17.18 102.723 17.18C104.243 17.18 104.943 16.12 105.163 15.38L107.203 16.12C106.743 17.64 105.283 19.3 102.723 19.3C99.8633 19.3 97.6833 17.08 97.6833 14.12C97.6833 11.12 99.8633 8.96 102.663 8.96C105.283 8.96 106.723 10.6 107.123 12.16L105.043 12.92C104.823 12.06 104.163 11.1 102.683 11.1ZM113.66 11.1C112.24 11.1 110.98 12.16 110.98 14.12C110.98 16.08 112.24 17.18 113.7 17.18C115.22 17.18 115.92 16.12 116.14 15.38L118.18 16.12C117.72 17.64 116.26 19.3 113.7 19.3C110.84 19.3 108.66 17.08 108.66 14.12C108.66 11.12 110.84 8.96 113.64 8.96C116.26 8.96 117.7 10.6 118.1 12.16L116.02 12.92C115.8 12.06 115.14 11.1 113.66 11.1ZM124.676 17.22C126.116 17.22 127.396 16.16 127.396 14.12C127.396 12.1 126.116 11.06 124.676 11.06C123.256 11.06 121.956 12.1 121.956 14.12C121.956 16.14 123.256 17.22 124.676 17.22ZM124.676 8.96C127.596 8.96 129.736 11.14 129.736 14.12C129.736 17.12 127.596 19.3 124.676 19.3C121.776 19.3 119.636 17.12 119.636 14.12C119.636 11.14 121.776 8.96 124.676 8.96ZM138.335 17.92C137.855 18.8 136.715 19.28 135.575 19.28C133.255 19.28 131.895 17.56 131.895 15.4V9.26H134.215V14.98C134.215 16.18 134.775 17.2 136.175 17.2C137.515 17.2 138.215 16.3 138.215 15.02V9.26H140.535V17.22C140.535 18.02 140.595 18.64 140.635 19H138.415C138.375 18.78 138.335 18.32 138.335 17.92ZM145.74 13.38V19H143.42V9.26H145.68V10.56C146.32 9.44 147.48 8.98 148.56 8.98C150.94 8.98 152.08 10.7 152.08 12.84V19H149.76V13.24C149.76 12.04 149.22 11.08 147.76 11.08C146.44 11.08 145.74 12.1 145.74 13.38ZM157.828 6.28V9.26H159.848V11.32H157.828V15.84C157.828 16.7 158.208 17.06 159.068 17.06C159.388 17.06 159.768 17 159.868 16.98V18.9C159.728 18.96 159.288 19.12 158.448 19.12C156.648 19.12 155.528 18.04 155.528 16.22V11.32H153.728V9.26H154.228C155.268 9.26 155.728 8.6 155.728 7.74V6.28H157.828Z" fill="#ffffff"/>
+      </svg>
+    </div>
+
+    <div class="badge">Limited-Time New Homeowner Offer</div>
+
+    <h1>Buy One TV,<br><em>Get One Free.</em></h1>
+    <p>A welcome gift from your real estate agent — because every new home deserves a great living room setup.</p>
+
+    <div class="bogo-card">
+      <div class="bogo-side bogo-buy">
+        <div class="label">You Buy</div>
+        <span class="tv-icon">📺</span>
+        <div class="desc">1 Smart TV<br><small style="font-weight:500;opacity:.85">(any size)</small></div>
+      </div>
+      <div class="bogo-divider">+<br>GET</div>
+      <div class="bogo-side bogo-get">
+        <div class="label">You Get</div>
+        <span class="tv-icon">📺</span>
+        <div class="desc">1 Smart TV<br><small style="font-weight:500;opacity:.75">FREE</small></div>
+      </div>
+    </div>
+
+    <a href="#claim" class="hero-cta">Claim My Free TV</a>
+    <div class="hero-note">Offer valid for new homeowners only &nbsp;·&nbsp; Expires 30 days from closing</div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how">
+    <div class="section-label">How It Works</div>
+    <h2 class="section-title">Three steps to a free TV</h2>
+    <p class="section-sub">Your agent set this up — all you have to do is claim it.</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-icon">🏠</div>
+        <div class="step-num">1</div>
+        <h3>Close on Your Home</h3>
+        <p>Your real estate agent shares this exclusive offer at closing — it's your housewarming gift.</p>
+      </div>
+      <div class="step">
+        <div class="step-icon">📋</div>
+        <div class="step-num">2</div>
+        <h3>Fill Out the Form</h3>
+        <p>Submit your info below with your agent's referral code to unlock the BOGO deal.</p>
+      </div>
+      <div class="step">
+        <div class="step-icon">🛒</div>
+        <div class="step-num">3</div>
+        <h3>Shop &amp; Save</h3>
+        <p>Buy one TV through HouseAccount and we'll send your second one — completely free.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFFER DETAILS -->
+  <section class="offer">
+    <div class="offer-inner">
+      <div class="section-label">What's Included</div>
+      <h2 class="section-title">Everything you need to settle in</h2>
+      <p class="section-sub">The BOGO TV offer is just the start. HouseAccount has your whole home covered.</p>
+
+      <div class="offer-grid">
+        <div class="offer-item">
+          <div class="oi-icon">📺</div>
+          <h4>Smart TVs</h4>
+          <p>All major brands — Samsung, LG, Sony, TCL — in every size from 43" to 85".</p>
+        </div>
+        <div class="offer-item">
+          <div class="oi-icon">🔊</div>
+          <h4>Free Setup</h4>
+          <p>Professional wall mounting and AV setup included with your purchase.</p>
+        </div>
+        <div class="offer-item">
+          <div class="oi-icon">🚚</div>
+          <h4>White-Glove Delivery</h4>
+          <p>We'll deliver both TVs to your new address — no hassle, no extra charge.</p>
+        </div>
+        <div class="offer-item">
+          <div class="oi-icon">🛡️</div>
+          <h4>2-Year Warranty</h4>
+          <p>Extended coverage on both TVs so you can move in with total peace of mind.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AGENT SECTION -->
+  <section class="agent">
+    <div class="section-label">For Real Estate Agents</div>
+    <h2 class="section-title">Give your clients a gift they'll remember</h2>
+    <p class="section-sub">Share your unique referral code at closing. When your client redeems, you earn rewards — and they get a free TV.</p>
+
+    <div class="agent-perks">
+      <div class="perk"><span class="perk-icon">🎁</span> Memorable closing gift</div>
+      <div class="perk"><span class="perk-icon">⭐</span> Boost referrals &amp; reviews</div>
+      <div class="perk"><span class="perk-icon">💰</span> Earn agent rewards points</div>
+      <div class="perk"><span class="perk-icon">📲</span> Easy digital sharing</div>
+      <div class="perk"><span class="perk-icon">📊</span> Track redemptions in real time</div>
+    </div>
+
+    <a href="mailto:agents@houseaccount.com" class="hero-cta">Get My Agent Code</a>
+  </section>
+
+  <!-- CLAIM FORM -->
+  <section class="form-section" id="claim">
+    <div class="form-card">
+      <div id="form-view">
+        <h2>Claim Your Free TV</h2>
+        <p>Enter your details and your agent's referral code to get started.</p>
+
+        <form id="claim-form" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="field">
+              <label>First Name</label>
+              <input type="text" placeholder="Alex" required />
+            </div>
+            <div class="field">
+              <label>Last Name</label>
+              <input type="text" placeholder="Johnson" required />
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Email Address</label>
+            <input type="email" placeholder="alex@email.com" required />
+          </div>
+
+          <div class="field">
+            <label>Phone Number</label>
+            <input type="tel" placeholder="(555) 000-0000" />
+          </div>
+
+          <div class="field">
+            <label>New Home Address</label>
+            <input type="text" placeholder="123 Main St, City, State 00000" required />
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label>Closing Date</label>
+              <input type="date" required />
+            </div>
+            <div class="field">
+              <label>TV Size Preference</label>
+              <select>
+                <option value="">Select size</option>
+                <option>43"</option>
+                <option>50"</option>
+                <option>55"</option>
+                <option>65"</option>
+                <option>75"</option>
+                <option>85"</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Agent Referral Code</label>
+            <input type="text" placeholder="e.g. AGENT-12345" required style="text-transform:uppercase;letter-spacing:1px;" />
+          </div>
+
+          <button type="submit" class="submit-btn">Claim My Free TV &rarr;</button>
+        </form>
+
+        <p class="form-legal">
+          By submitting, you agree to HouseAccount's Terms of Service and Privacy Policy.<br>
+          Offer valid for verified new homeowners within 30 days of closing. One BOGO per household.
+        </p>
+      </div>
+
+      <div class="success-state" id="success-view">
+        <div class="check">🎉</div>
+        <h3>You're all set!</h3>
+        <p>We've received your claim. Check your email for next steps — your free TV is on its way.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <!-- HouseAccount footer logo -->
+    <svg width="140" height="21" viewBox="0 0 162 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block;margin:0 auto 12px;opacity:0.5">
+      <path d="M5.69469 23V10.8633L16.5 5.05723L10.7688 1L0 6.80604V18.9777L5.69469 23Z" fill="#ffffff"/>
+      <path d="M15.9674 18.1198L9.5695 21.5682V13.1232L15.9674 9.92114V18.1198Z" fill="rgba(255,255,255,0.55)"/>
+      <path d="M37.76 19H35.34V12.94H28.68V19H26.28V4.82H28.68V10.68H35.34V4.82H37.76V19ZM45.2038 17.22C46.6438 17.22 47.9238 16.16 47.9238 14.12C47.9238 12.1 46.6438 11.06 45.2038 11.06C43.7838 11.06 42.4838 12.1 42.4838 14.12C42.4838 16.14 43.7838 17.22 45.2038 17.22ZM45.2038 8.96C48.1238 8.96 50.2638 11.14 50.2638 14.12C50.2638 17.12 48.1238 19.3 45.2038 19.3C42.3038 19.3 40.1638 17.12 40.1638 14.12C40.1638 11.14 42.3038 8.96 45.2038 8.96ZM58.862 17.92C58.382 18.8 57.242 19.28 56.102 19.28C53.782 19.28 52.422 17.56 52.422 15.4V9.26H54.742V14.98C54.742 16.18 55.302 17.2 56.702 17.2C58.042 17.2 58.742 16.3 58.742 15.02V9.26H61.062V17.22C61.062 18.02 61.122 18.64 61.162 19H58.942C58.902 18.78 58.862 18.32 58.862 17.92ZM63.2678 16.36L65.2878 15.8C65.3678 16.68 66.0278 17.46 67.2678 17.46C68.2278 17.46 68.7278 16.94 68.7278 16.34C68.7278 15.82 68.3678 15.42 67.5878 15.26L66.1478 14.94C64.4278 14.56 63.5278 13.44 63.5278 12.1C63.5278 10.4 65.0878 8.96 67.1078 8.96C69.8278 8.96 70.7078 10.72 70.8678 11.68L68.9078 12.24C68.8278 11.68 68.4078 10.78 67.1078 10.78C66.2878 10.78 65.7078 11.3 65.7078 11.9C65.7078 12.42 66.0878 12.8 66.6878 12.92L68.1678 13.22C70.0078 13.62 70.9678 14.74 70.9678 16.18C70.9678 17.66 69.7678 19.3 67.2878 19.3C64.4678 19.3 63.3878 17.46 63.2678 16.36ZM75.0047 13.06H79.7847C79.7447 11.92 78.9847 10.9 77.3847 10.9C75.9247 10.9 75.0847 12.02 75.0047 13.06ZM80.0447 15.6L82.0047 16.22C81.4847 17.92 79.9447 19.3 77.6047 19.3C74.9647 19.3 72.6247 17.38 72.6247 14.08C72.6247 11 74.9047 8.96 77.3647 8.96C80.3647 8.96 82.1247 10.94 82.1247 14.02C82.1247 14.4 82.0847 14.72 82.0647 14.76H74.9447C75.0047 16.24 76.1647 17.3 77.6047 17.3C79.0047 17.3 79.7247 16.56 80.0447 15.6ZM94.2217 19L92.8817 15.44H86.8817L85.5617 19H83.0217L88.5417 4.82H91.3217L96.8417 19H94.2217ZM89.8817 7.42L87.7217 13.22H92.0417L89.8817 7.42ZM102.683 11.1C101.263 11.1 100.003 12.16 100.003 14.12C100.003 16.08 101.263 17.18 102.723 17.18C104.243 17.18 104.943 16.12 105.163 15.38L107.203 16.12C106.743 17.64 105.283 19.3 102.723 19.3C99.8633 19.3 97.6833 17.08 97.6833 14.12C97.6833 11.12 99.8633 8.96 102.663 8.96C105.283 8.96 106.723 10.6 107.123 12.16L105.043 12.92C104.823 12.06 104.163 11.1 102.683 11.1ZM113.66 11.1C112.24 11.1 110.98 12.16 110.98 14.12C110.98 16.08 112.24 17.18 113.7 17.18C115.22 17.18 115.92 16.12 116.14 15.38L118.18 16.12C117.72 17.64 116.26 19.3 113.7 19.3C110.84 19.3 108.66 17.08 108.66 14.12C108.66 11.12 110.84 8.96 113.64 8.96C116.26 8.96 117.7 10.6 118.1 12.16L116.02 12.92C115.8 12.06 115.14 11.1 113.66 11.1ZM124.676 17.22C126.116 17.22 127.396 16.16 127.396 14.12C127.396 12.1 126.116 11.06 124.676 11.06C123.256 11.06 121.956 12.1 121.956 14.12C121.956 16.14 123.256 17.22 124.676 17.22ZM124.676 8.96C127.596 8.96 129.736 11.14 129.736 14.12C129.736 17.12 127.596 19.3 124.676 19.3C121.776 19.3 119.636 17.12 119.636 14.12C119.636 11.14 121.776 8.96 124.676 8.96ZM138.335 17.92C137.855 18.8 136.715 19.28 135.575 19.28C133.255 19.28 131.895 17.56 131.895 15.4V9.26H134.215V14.98C134.215 16.18 134.775 17.2 136.175 17.2C137.515 17.2 138.215 16.3 138.215 15.02V9.26H140.535V17.22C140.535 18.02 140.595 18.64 140.635 19H138.415C138.375 18.78 138.335 18.32 138.335 17.92ZM145.74 13.38V19H143.42V9.26H145.68V10.56C146.32 9.44 147.48 8.98 148.56 8.98C150.94 8.98 152.08 10.7 152.08 12.84V19H149.76V13.24C149.76 12.04 149.22 11.08 147.76 11.08C146.44 11.08 145.74 12.1 145.74 13.38ZM157.828 6.28V9.26H159.848V11.32H157.828V15.84C157.828 16.7 158.208 17.06 159.068 17.06C159.388 17.06 159.768 17 159.868 16.98V18.9C159.728 18.96 159.288 19.12 158.448 19.12C156.648 19.12 155.528 18.04 155.528 16.22V11.32H153.728V9.26H154.228C155.268 9.26 155.728 8.6 155.728 7.74V6.28H157.828Z" fill="#ffffff"/>
+    </svg>
+    Making your new house feel like home — from day one.<br><br>
+    &copy; 2026 HouseAccount. All rights reserved.<br>
+    Questions? <a href="mailto:hello@houseaccount.com" style="color:var(--blue);text-decoration:none;">hello@houseaccount.com</a>
+    &nbsp;·&nbsp; <a href="#" style="color:inherit;">Terms</a>
+    &nbsp;·&nbsp; <a href="#" style="color:inherit;">Privacy</a>
+  </footer>
+
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      document.getElementById('form-view').style.display = 'none';
+      document.getElementById('success-view').style.display = 'block';
+    }
+
+    // Smooth scroll for CTA
+    document.querySelector('.hero-cta').addEventListener('click', function(e) {
+      if (this.getAttribute('href') === '#claim') {
+        e.preventDefault();
+        document.getElementById('claim').scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  </script>
+</body>
+</html>

@@ -188,61 +188,56 @@ body { font-family: -apple-system, 'Segoe UI', sans-serif; background: var(--cre
   </div>
 </section>
 
-<!-- SHARE -->
-<section class="share">
-  <div class="share-inner">
 
-    <div class="share-left">
-      <div class="eyebrow">Share with your buyers</div>
-      <h2>One link. Paste it anywhere.</h2>
-      <p>Send it by text, email, or drop it in your closing packet. Your client fills out a 2-minute form and a HouseAccount concierge handles the rest.</p>
+<!-- AGENT SIGN-UP -->
+<section class="share" style="background:var(--cream);padding:64px 24px;">
+  <div style="max-width:520px;margin:0 auto;">
+    <div class="eyebrow" style="text-align:center;margin-bottom:10px;">Get set up</div>
+    <h2 style="text-align:center;font-size:clamp(22px,3vw,30px);margin-bottom:8px;color:var(--navy);">Start offering this to your buyers</h2>
+    <p style="text-align:center;color:var(--muted);font-size:15px;line-height:1.65;margin-bottom:32px;">Fill in your info and a HouseAccount partner will reach out to get you set up. Takes 2 minutes.</p>
 
-      <div class="url-box">
-        <span>Sign-up link</span>
-        <span id="display-url">https://tx-houseaccount-freetvmount.netlify.app/</span>
+    <div style="background:#fff;border:1.5px solid #dde6ec;border-radius:16px;padding:32px;">
+      <div id="agent-form-wrap">
+        <form id="agent-form" name="agent-signup-tx" data-netlify="true">
+          <input type="hidden" name="form-name" value="agent-signup-tx">
+          <input type="hidden" name="market" value="TX">
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px;">
+            <div>
+              <label style="display:block;font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--navy);margin-bottom:5px;">First name</label>
+              <input type="text" name="first-name" placeholder="Jane" required style="width:100%;padding:11px 13px;border:1.5px solid #dde6ec;border-radius:8px;font-size:14px;color:var(--navy);outline:none;font-family:inherit;">
+            </div>
+            <div>
+              <label style="display:block;font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--navy);margin-bottom:5px;">Last name</label>
+              <input type="text" name="last-name" placeholder="Smith" required style="width:100%;padding:11px 13px;border:1.5px solid #dde6ec;border-radius:8px;font-size:14px;color:var(--navy);outline:none;font-family:inherit;">
+            </div>
+          </div>
+
+          <div style="margin-bottom:14px;">
+            <label style="display:block;font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--navy);margin-bottom:5px;">Email</label>
+            <input type="email" name="email" placeholder="jane@brokerage.com" required style="width:100%;padding:11px 13px;border:1.5px solid #dde6ec;border-radius:8px;font-size:14px;color:var(--navy);outline:none;font-family:inherit;">
+          </div>
+
+          <div style="margin-bottom:14px;">
+            <label style="display:block;font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--navy);margin-bottom:5px;">Phone</label>
+            <input type="tel" name="phone" placeholder="(555) 000-0000" required style="width:100%;padding:11px 13px;border:1.5px solid #dde6ec;border-radius:8px;font-size:14px;color:var(--navy);outline:none;font-family:inherit;">
+          </div>
+
+          <div style="margin-bottom:22px;">
+            <label style="display:block;font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--navy);margin-bottom:5px;">Brokerage</label>
+            <input type="text" name="brokerage" placeholder="Keller Williams, Compass, Side..." required style="width:100%;padding:11px 13px;border:1.5px solid #dde6ec;border-radius:8px;font-size:14px;color:var(--navy);outline:none;font-family:inherit;">
+          </div>
+
+          <button type="submit" style="width:100%;padding:15px;background:var(--navy);color:#fff;font-size:16px;font-weight:700;border:none;border-radius:8px;cursor:pointer;font-family:inherit;letter-spacing:.01em;">
+            Get me set up
+          </button>
+          <p style="text-align:center;font-size:12px;color:#aab8c2;margin-top:10px;">We'll reach out within 1 business day. No spam, ever.</p>
+        </form>
       </div>
-      <button class="copy-btn" onclick="copyLink()">
-        <svg viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-        Copy link
-      </button>
-      <span class="copy-confirm" id="copy-confirm">Copied to clipboard!</span>
-    </div>
-
-    <div class="share-right">
-      <h3>Or scan the QR code</h3>
-      <div class="qr-wrap">
-        <img id="qr-img" src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&color=133C55&data=https://tx-houseaccount-freetvmount.netlify.app/" alt="QR Code">
-      </div>
-      <p class="qr-note">Screenshot and text it, print it for closing packets,<br>or display it at open houses.</p>
-      <button class="download-btn" onclick="downloadQR()">
-        <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Download QR code
-      </button>
-    </div>
-
-  </div>
-</section>
-
-<!-- HOW TO SHARE -->
-<section class="how">
-  <div class="how-inner">
-    <div class="eyebrow">How to share it</div>
-    <div class="section-title" style="margin-bottom:0">Three ways to get this in front of your clients</div>
-    <div class="steps">
-      <div class="step">
-        <div class="step-num">1</div>
-        <h3>Text at closing</h3>
-        <p>Copy the link above and text it to your buyer the day of closing while excitement is at its peak.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <h3>Add to closing email</h3>
-        <p>Drop the link into your post-closing follow-up email as a surprise bonus gift.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <h3>Print the QR code</h3>
-        <p>Download and print the QR code to include in your closing packet or display at showings.</p>
+      <div id="agent-success" style="display:none;text-align:center;padding:24px 0;">
+        <div style="font-size:32px;margin-bottom:12px;">&#10003;</div>
+        <h3 style="color:var(--navy);font-size:20px;margin-bottom:8px;">You're on the list!</h3>
+        <p style="color:var(--muted);font-size:15px;line-height:1.6;">A HouseAccount partner will reach out within 1 business day to get you set up with the TX offer.</p>
       </div>
     </div>
   </div>
@@ -322,6 +317,28 @@ function downloadQR() {
   link.target = '_blank';
   link.click();
 }
+
+
+document.getElementById('agent-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const form = e.target;
+  const data = new FormData(form);
+  try {
+    const res = await fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(data).toString()
+    });
+    if (res.ok) {
+      document.getElementById('agent-form-wrap').style.display = 'none';
+      document.getElementById('agent-success').style.display = 'block';
+    } else {
+      alert('Something went wrong. Please try again.');
+    }
+  } catch(err) {
+    alert('Something went wrong. Please try again.');
+  }
+});
 
 </script>
 </body>
